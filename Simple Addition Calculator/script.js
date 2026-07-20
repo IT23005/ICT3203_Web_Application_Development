@@ -8,7 +8,9 @@ function calculate() {
     }
     else {
         var sum = Number(a) + Number(b);
-        document.getElementById("message").innerText = "Result: " + sum;
+
+        // Changed this line to only output the sum 
+        document.getElementById("message").innerText = sum;
         document.getElementById("message").className = "message";
     }
 }
