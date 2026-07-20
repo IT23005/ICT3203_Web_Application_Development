@@ -3,8 +3,23 @@ body {
     margin-top: 50px;
 }
 
-h1 {
+#display {
     font-size: 60px;
+    box-sizing: border-box;
+    width: calc(4 * 90px);
+    padding: 10px 0;
+    margin: 0 auto 20px auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+h1 {
+    align-items: center;
+    font-size: 60px;
+    box-sizing: border-box;
+    width: calc(4 * 90px);
+    padding: 10px 0;
+    margin: 0 auto 20px auto;
 }
 
 .buttons {
@@ -12,8 +27,10 @@ h1 {
 }
 
 button {
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
     margin: 10px;
-    padding: 20px 30px;
     font-size: 24px;
     font-weight: bold;
     border: 2px solid #333;
