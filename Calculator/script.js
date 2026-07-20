@@ -1,30 +1,43 @@
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
+let resultShown = false;
 
 function appendNumber(num) {
+    if (resultShown) {
+        firstNumber = "";
+        secondNumber = "";
+        operator = "";
+        resultShown = false;
+    }
+
     if (operator === "") {
         firstNumber = firstNumber + num;
-        updateDisplay(firstNumber);
     } else {
         secondNumber = secondNumber + num;
-        updateDisplay(secondNumber);
     }
+    updateDisplay(firstNumber + operator + secondNumber);
 }
 
 function setOperator(op) {
     if (firstNumber !== "") {
         operator = op;
+        resultShown = false;
+        updateDisplay(firstNumber + operator + secondNumber);
     }
 }
 
 function calculate() {
+    if (operator === "") {
+        return;
+    }
+
     let result = 0;
     let num1 = parseFloat(firstNumber);
     let num2 = parseFloat(secondNumber);
 
     if (isNaN(num1) || isNaN(num2)) {
-        updateDisplay("");
+        updateDisplay("Error");
         return;
     }
 
@@ -36,7 +49,7 @@ function calculate() {
         result = num1 * num2;
     } else if (operator === "/") {
         if (num2 === 0) {
-            updateDisplay("0");
+            updateDisplay("Error");
             return;
         }
         result = num1 / num2;
@@ -47,12 +60,14 @@ function calculate() {
     firstNumber = result.toString();
     secondNumber = "";
     operator = "";
+    resultShown = true;
 }
 
 function clearDisplay() {
     firstNumber = "";
     secondNumber = "";
     operator = "";
+    resultShown = false;
     updateDisplay(0);
 }
 
