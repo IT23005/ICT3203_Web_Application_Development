@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.buttons {
+    display: inline-block;
+}
+
+button {
+    margin: 10px;
+    padding: 20px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+button:hover {
+    background-color: #ddd;
+}
